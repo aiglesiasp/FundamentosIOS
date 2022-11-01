@@ -41,4 +41,9 @@ class DetailViewController: UIViewController {
         hero = model
     }
     
+    @IBAction func onTransformationButtonTap(_ sender: Any) {
+        let nextVC = TransformationTableViewController()
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
 }

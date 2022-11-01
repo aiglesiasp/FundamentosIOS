@@ -15,6 +15,8 @@
 		5B8AF1BC29118A280002CF5E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1BA29118A280002CF5E /* TableViewCell.xib */; };
 		5B8AF1BF29119AFC0002CF5E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1BD29119AFC0002CF5E /* DetailViewController.swift */; };
 		5B8AF1C029119AFC0002CF5E /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1BE29119AFC0002CF5E /* DetailViewController.xib */; };
+		5B8AF1C32911A3B40002CF5E /* TransformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1C12911A3B40002CF5E /* TransformationTableViewController.swift */; };
+		5B8AF1C42911A3B40002CF5E /* TransformationTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1C22911A3B40002CF5E /* TransformationTableViewController.xib */; };
 		5BEE2A2629116834009D1866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2529116834009D1866 /* AppDelegate.swift */; };
 		5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2729116834009D1866 /* SceneDelegate.swift */; };
 		5BEE2A2F29116836009D1866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2E29116836009D1866 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		5B8AF1BA29118A280002CF5E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5B8AF1BD29119AFC0002CF5E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B8AF1BE29119AFC0002CF5E /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		5B8AF1C12911A3B40002CF5E /* TransformationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationTableViewController.swift; sourceTree = "<group>"; };
+		5B8AF1C22911A3B40002CF5E /* TransformationTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationTableViewController.xib; sourceTree = "<group>"; };
 		5BEE2A2229116834009D1866 /* 0-DragonBallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0-DragonBallApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEE2A2529116834009D1866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BEE2A2729116834009D1866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				5B3D6EE0291169F100F3939B /* LoginViewController.xib */,
 				5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */,
 				5B8AF1BE29119AFC0002CF5E /* DetailViewController.xib */,
+				5B8AF1C22911A3B40002CF5E /* TransformationTableViewController.xib */,
 				5B8AF1B8291189F40002CF5E /* HeroesTableCellViews */,
 			);
 			path = Views;
@@ -166,6 +171,7 @@
 				5B3D6EDF291169F100F3939B /* LoginViewController.swift */,
 				5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */,
 				5B8AF1BD29119AFC0002CF5E /* DetailViewController.swift */,
+				5B8AF1C12911A3B40002CF5E /* TransformationTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				5B8AF1BC29118A280002CF5E /* TableViewCell.xib in Resources */,
 				5BEE2A2F29116836009D1866 /* Assets.xcassets in Resources */,
 				5B3D6EE2291169F100F3939B /* LoginViewController.xib in Resources */,
+				5B8AF1C42911A3B40002CF5E /* TransformationTableViewController.xib in Resources */,
 				5B8AF1B7291188790002CF5E /* HeroesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +324,7 @@
 				5B8AF1BF29119AFC0002CF5E /* DetailViewController.swift in Sources */,
 				5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */,
 				5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */,
+				5B8AF1C32911A3B40002CF5E /* TransformationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
