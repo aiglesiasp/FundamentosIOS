@@ -43,8 +43,26 @@ class HeroesTableViewController: UITableViewController {
         
         // TODO: - Aqui he pasado variables
         cell.heroesTitle.text = "Index \(indexPath)"
-        cell.heroesDescription.text = "Index \(indexPath)"
         // Configure the cell...
         return cell
     }
+    
+    
+    // MARK: - FUNCION PARA PASAR A LA PANTALLA DETAILS
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Creo mi heroe
+        let hero = Hero(
+            image: UIImage(named: "fondo2") ?? UIImage(),
+            name: "Index: \(indexPath)",
+            description: "Index: \(indexPath)")
+        
+        //Creo el Detail ViewConroller
+        let nextVC = DetailViewController()
+        //Agregando datos
+        nextVC.set(model: hero)
+
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
