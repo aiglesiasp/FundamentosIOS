@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D6EDF291169F100F3939B /* LoginViewController.swift */; };
 		5B3D6EE2291169F100F3939B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3D6EE0291169F100F3939B /* LoginViewController.xib */; };
+		5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */; };
+		5B8AF1B7291188790002CF5E /* HeroesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */; };
+		5B8AF1BB29118A280002CF5E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B929118A280002CF5E /* TableViewCell.swift */; };
+		5B8AF1BC29118A280002CF5E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1BA29118A280002CF5E /* TableViewCell.xib */; };
 		5BEE2A2629116834009D1866 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2529116834009D1866 /* AppDelegate.swift */; };
 		5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2729116834009D1866 /* SceneDelegate.swift */; };
 		5BEE2A2F29116836009D1866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BEE2A2E29116836009D1866 /* Assets.xcassets */; };
@@ -38,6 +42,10 @@
 /* Begin PBXFileReference section */
 		5B3D6EDF291169F100F3939B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B3D6EE0291169F100F3939B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
+		5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
+		5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewController.xib; sourceTree = "<group>"; };
+		5B8AF1B929118A280002CF5E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		5B8AF1BA29118A280002CF5E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		5BEE2A2229116834009D1866 /* 0-DragonBallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "0-DragonBallApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEE2A2529116834009D1866 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BEE2A2729116834009D1866 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B8AF1B8291189F40002CF5E /* HeroesTableCellViews */ = {
+			isa = PBXGroup;
+			children = (
+				5B8AF1B929118A280002CF5E /* TableViewCell.swift */,
+				5B8AF1BA29118A280002CF5E /* TableViewCell.xib */,
+			);
+			path = HeroesTableCellViews;
+			sourceTree = "<group>";
+		};
 		5BEE2A1929116834009D1866 = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +148,9 @@
 		5BEE2A59291169A5009D1866 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5B8AF1B8291189F40002CF5E /* HeroesTableCellViews */,
 				5B3D6EE0291169F100F3939B /* LoginViewController.xib */,
+				5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3D6EDF291169F100F3939B /* LoginViewController.swift */,
+				5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BEE2A3229116836009D1866 /* LaunchScreen.storyboard in Resources */,
+				5B8AF1BC29118A280002CF5E /* TableViewCell.xib in Resources */,
 				5BEE2A2F29116836009D1866 /* Assets.xcassets in Resources */,
 				5B3D6EE2291169F100F3939B /* LoginViewController.xib in Resources */,
+				5B8AF1B7291188790002CF5E /* HeroesTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +304,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8AF1BB29118A280002CF5E /* TableViewCell.swift in Sources */,
 				5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */,
 				5BEE2A2629116834009D1866 /* AppDelegate.swift in Sources */,
 				5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */,
+				5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

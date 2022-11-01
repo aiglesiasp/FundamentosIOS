@@ -20,4 +20,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    //Boton para pasar entre pantallas.
+    @IBAction func onLoginButtonTap(_ sender: Any) {
+        let nextVC = HeroesTableViewController()
+        navigationController?.setViewControllers([nextVC], animated: true)
+    }
 }
