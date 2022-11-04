@@ -15,16 +15,10 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var heroesDescription: UILabel!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func set(model:Hero) {
+        self.heroesTitle.text = model.name
+        self.heroesDescription.text = model.description
+        self.heroesImage.setImage(url: model.photo)
     }
-    
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D6EDF291169F100F3939B /* LoginViewController.swift */; };
 		5B3D6EE2291169F100F3939B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3D6EE0291169F100F3939B /* LoginViewController.xib */; };
+		5B566C2A2913F53A00797311 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B566C292913F53A00797311 /* UIImageViewExtension.swift */; };
+		5B566C2C291450A200797311 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B566C2B291450A200797311 /* NetworkModel.swift */; };
+		5B76467A2912EDC500B5838A /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7646792912EDC500B5838A /* HeroModel.swift */; };
 		5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */; };
 		5B8AF1B7291188790002CF5E /* HeroesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */; };
 		5B8AF1BB29118A280002CF5E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8AF1B929118A280002CF5E /* TableViewCell.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		5B3D6EDF291169F100F3939B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B3D6EE0291169F100F3939B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
+		5B566C292913F53A00797311 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		5B566C2B291450A200797311 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		5B7646792912EDC500B5838A /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesTableViewController.swift; sourceTree = "<group>"; };
 		5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesTableViewController.xib; sourceTree = "<group>"; };
 		5B8AF1B929118A280002CF5E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		5BEE2A1929116834009D1866 = {
 			isa = PBXGroup;
 			children = (
+				5B566C292913F53A00797311 /* UIImageViewExtension.swift */,
 				5BEE2A2429116834009D1866 /* 0-DragonBallApp */,
 				5BEE2A3B29116836009D1866 /* 0-DragonBallAppTests */,
 				5BEE2A4529116836009D1866 /* 0-DragonBallAppUITests */,
@@ -179,6 +186,8 @@
 		5BEE2A5B291169B9009D1866 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B7646792912EDC500B5838A /* HeroModel.swift */,
+				5B566C2B291450A200797311 /* NetworkModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,11 +328,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B8AF1BB29118A280002CF5E /* TableViewCell.swift in Sources */,
+				5B76467A2912EDC500B5838A /* HeroModel.swift in Sources */,
 				5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */,
 				5BEE2A2629116834009D1866 /* AppDelegate.swift in Sources */,
 				5B8AF1BF29119AFC0002CF5E /* DetailViewController.swift in Sources */,
+				5B566C2A2913F53A00797311 /* UIImageViewExtension.swift in Sources */,
 				5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */,
 				5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */,
+				5B566C2C291450A200797311 /* NetworkModel.swift in Sources */,
 				5B8AF1C32911A3B40002CF5E /* TransformationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,15 +7,6 @@
 
 import UIKit
 
-// MARK: - CLASSE HEROE -
-struct Hero {
-    let image: UIImage
-    let name: String
-    let description: String
-}
-
-
-
 class DetailViewController: UIViewController {
 
     // Linkeo componenetes
@@ -23,24 +14,32 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heroeName: UILabel!
     @IBOutlet weak var heroeDescription: UITextView!
     
+    
+    //Declaro variable simple de heroe
     private var hero: Hero?
     
     
+    //MARK: - CARGAR LA VISTA DE DETAIL -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "HEROE"
         
         guard let hero = hero else { return }
         
-        self.heroeImage.image = hero.image
+        self.heroeImage.setImage(url: hero.photo)
         self.heroeName.text = hero.name
         self.heroeDescription.text = hero.description
 
     }
+    
+    //MARK: - FUNCION PARA SETEAR UN HEROE -
     func set(model: Hero) {
         hero = model
     }
     
+    
+    
+    //MARK: - BOTON QUE LLAMA A LAS TRANSFORMACIONES -
     @IBAction func onTransformationButtonTap(_ sender: Any) {
         let nextVC = TransformationTableViewController()
         
