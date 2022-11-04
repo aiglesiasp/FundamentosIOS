@@ -91,7 +91,7 @@ class NetworkModel {
             return
         }
         //CHEQUEO TOKEN
-        guard let token = token else {
+        guard let token = self.token else {
             completion([], NetworkError.other)
             return
         }
@@ -152,8 +152,8 @@ class NetworkModel {
             return
         }
         //CHEQUEO TOKEN
-        guard let token = token else {
-            
+        guard let token = self.token else {
+            completion([], NetworkError.tokenFormatError)
             return
         }
         //Creo la REQUEST

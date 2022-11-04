@@ -22,16 +22,17 @@ class TransformationTableViewController: UITableViewController {
         
         //MARK: -Hacemos llamada a red
         let networkModel = NetworkModel.shared
-        networkModel.getTransformation(id: "D13A40E5-4418-4223-9CE6-D2F9A28EBE94") { [weak self] transformaciones, _ in
+        networkModel.getTransformation(id: "") { [weak self] transformaciones, _ in
             guard let self = self else {return}
             self.transformaciones = transformaciones
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
         }
+        
     }
+    
     
     // MARK: - Table view data source
     
