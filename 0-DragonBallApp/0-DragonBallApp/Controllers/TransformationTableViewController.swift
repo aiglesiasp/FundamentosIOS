@@ -11,7 +11,12 @@ class TransformationTableViewController: UITableViewController {
     
     //DECLARAMOS ARRAY DE TRANSFORMACIONS
     var transformaciones: [Transformation] = []
-
+    var heroId: String?
+    
+    func set(heroId: String) {
+        self.heroId = heroId
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +27,8 @@ class TransformationTableViewController: UITableViewController {
         
         //MARK: -Hacemos llamada a red
         let networkModel = NetworkModel.shared
-        networkModel.getTransformation(id: "") { [weak self] transformaciones, _ in
+        guard let heroId else {return}
+        networkModel.getTransformation(id: heroId) { [weak self] transformaciones, _ in
             guard let self = self else {return}
             self.transformaciones = transformaciones
             
@@ -32,7 +38,6 @@ class TransformationTableViewController: UITableViewController {
         }
         
     }
-    
     
     // MARK: - Table view data source
     

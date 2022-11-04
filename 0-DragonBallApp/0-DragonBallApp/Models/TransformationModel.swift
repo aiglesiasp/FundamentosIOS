@@ -14,5 +14,4 @@ struct Transformation: Decodable {
     let name: String
     let description: String
     let photo: URL
-    let hero: Hero
 }

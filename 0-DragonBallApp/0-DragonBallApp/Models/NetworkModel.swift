@@ -147,7 +147,7 @@ class NetworkModel {
     //MARK: - CREO FUNCION PARA LISTA DE HEROES -
     func getTransformation (id: String, completion: @escaping ([Transformation], NetworkError?) -> Void) {
         //LLAMADA A RED
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/transformations") else {
+        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/tranformations") else {
             completion([], NetworkError.malformedURL)
             return
         }

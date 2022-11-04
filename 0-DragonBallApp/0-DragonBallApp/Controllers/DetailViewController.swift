@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
     //MARK: - BOTON QUE LLAMA A LAS TRANSFORMACIONES -
     @IBAction func onTransformationButtonTap(_ sender: Any) {
         let nextVC = TransformationTableViewController()
-        
+        nextVC.set(heroId: hero?.id ?? "")
         navigationController?.pushViewController(nextVC, animated: true)
     }
 }
