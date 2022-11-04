@@ -56,7 +56,7 @@ class HeroesTableViewController: UITableViewController {
         }
 
         // TODO: - Aqui he pasado variables
-        cell.set(model: heroes[indexPath.row])
+        cell.setHero(model: heroes[indexPath.row])
         // Configure the cell...
         return cell
     }

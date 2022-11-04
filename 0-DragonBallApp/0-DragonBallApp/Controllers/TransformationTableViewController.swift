@@ -9,6 +9,10 @@ import UIKit
 
 class TransformationTableViewController: UITableViewController {
     
+    //DECLARAMOS ARRAY DE TRANSFORMACIONS
+    var transformaciones: [Transformation] = []
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "TRANSFORMATION"
@@ -16,6 +20,17 @@ class TransformationTableViewController: UITableViewController {
         //MARK: - REGISTRAR NUESTRA CELDA -
         tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "heroesCellView")
         
+        //MARK: -Hacemos llamada a red
+        let networkModel = NetworkModel.shared
+        networkModel.getTransformation(id: "D13A40E5-4418-4223-9CE6-D2F9A28EBE94") { [weak self] transformaciones, _ in
+            guard let self = self else {return}
+            self.transformaciones = transformaciones
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
     }
     
     // MARK: - Table view data source
@@ -27,7 +42,7 @@ class TransformationTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return transformaciones.count
     }
     
     // MARK: - AQUI LE PASO EL TIPO DE CELDA -
@@ -41,9 +56,19 @@ class TransformationTableViewController: UITableViewController {
 
         
         // TODO: - Aqui he pasado variables
-        cell.heroesTitle.text = "Index \(indexPath)"
+        //cell.heroesTitle.text = "Index: \(indexPath)"
+        cell.setTransformation(model: transformaciones[indexPath.row])
         // Configure the cell...
         return cell
+    }
+    
+    
+    //MARK: - Aqui paso al detalle de tranformaciones
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let nextVC = DetailTransformationViewController()
+        nextVC.set(model: transformaciones[indexPath.row])
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

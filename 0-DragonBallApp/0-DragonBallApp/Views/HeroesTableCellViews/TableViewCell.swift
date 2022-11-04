@@ -16,7 +16,13 @@ class TableViewCell: UITableViewCell {
     
     
 
-    func set(model:Hero) {
+    func setHero(model:Hero) {
+        self.heroesTitle.text = model.name
+        self.heroesDescription.text = model.description
+        self.heroesImage.setImage(url: model.photo)
+    }
+    
+    func setTransformation(model: Transformation) {
         self.heroesTitle.text = model.name
         self.heroesDescription.text = model.description
         self.heroesImage.setImage(url: model.photo)

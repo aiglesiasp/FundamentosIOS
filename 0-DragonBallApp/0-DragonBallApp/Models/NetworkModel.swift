@@ -132,7 +132,7 @@ class NetworkModel {
                 completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
                 return
             }
-           
+            
             guard let heroesResponse = try? JSONDecoder().decode([Hero].self, from: data) else {
                 completion([], NetworkError.decoding)
                 return
@@ -142,6 +142,66 @@ class NetworkModel {
             completion(heroesResponse, nil)
         }
         task.resume()
+    }
+    
+    //MARK: - CREO FUNCION PARA LISTA DE HEROES -
+    func getTransformation (id: String, completion: @escaping ([Transformation], NetworkError?) -> Void) {
+        //LLAMADA A RED
+        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/transformations") else {
+            completion([], NetworkError.malformedURL)
+            return
+        }
+        //CHEQUEO TOKEN
+        guard let token = token else {
+            
+            return
+        }
+        //Creo la REQUEST
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        //Necesitamos pasarle un BODY a la request
+        struct Body: Encodable {
+            let id: String
+        }
+        let body = Body(id: id)
+        
+        //Le pasamos el body a la request
+        urlRequest.httpBody = try? JSONEncoder().encode(body)
+        
+        //Vuelvo a crear la tarea para verificar todo
+        //MARK: Creamos el DATATASK que usa este REQUEST
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            //Compruebo que el error es nil para seguir, sino salta el error
+            guard error == nil
+            else {
+                completion([], NetworkError.other)
+                return
+            }
+            //Miramos que la data tenga contenido
+            guard let data = data
+            else {
+                completion([], NetworkError.noData)
+                return
+            }
+            //Miramos e tipo de respuesta recibido
+            guard let httpResponse = (response as? HTTPURLResponse),
+                  httpResponse.statusCode == 200
+            else {
+                completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
+                return
+            }
+            
+            guard let transformationResponse = try? JSONDecoder().decode([Transformation].self, from: data) else {
+                completion([], NetworkError.decoding)
+                return
+            }
+            
+            //Paso el token
+            completion(transformationResponse, nil)
+        }
+        task.resume()
     }
 }

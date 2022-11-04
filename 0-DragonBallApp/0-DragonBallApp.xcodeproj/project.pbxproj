@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D6EDF291169F100F3939B /* LoginViewController.swift */; };
 		5B3D6EE2291169F100F3939B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3D6EE0291169F100F3939B /* LoginViewController.xib */; };
+		5B41195E29159C7E00BA6C1A /* DetailTransformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41195C29159C7E00BA6C1A /* DetailTransformationViewController.swift */; };
+		5B41195F29159C7E00BA6C1A /* DetailTransformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B41195D29159C7E00BA6C1A /* DetailTransformationViewController.xib */; };
+		5B41196129159D6700BA6C1A /* TransformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B41196029159D6700BA6C1A /* TransformationModel.swift */; };
 		5B566C2A2913F53A00797311 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B566C292913F53A00797311 /* UIImageViewExtension.swift */; };
 		5B566C2C291450A200797311 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B566C2B291450A200797311 /* NetworkModel.swift */; };
 		5B76467A2912EDC500B5838A /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7646792912EDC500B5838A /* HeroModel.swift */; };
@@ -49,6 +52,9 @@
 /* Begin PBXFileReference section */
 		5B3D6EDF291169F100F3939B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B3D6EE0291169F100F3939B /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
+		5B41195C29159C7E00BA6C1A /* DetailTransformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransformationViewController.swift; sourceTree = "<group>"; };
+		5B41195D29159C7E00BA6C1A /* DetailTransformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransformationViewController.xib; sourceTree = "<group>"; };
+		5B41196029159D6700BA6C1A /* TransformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationModel.swift; sourceTree = "<group>"; };
 		5B566C292913F53A00797311 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		5B566C2B291450A200797311 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		5B7646792912EDC500B5838A /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 				5B8AF1B5291188790002CF5E /* HeroesTableViewController.xib */,
 				5B8AF1BE29119AFC0002CF5E /* DetailViewController.xib */,
 				5B8AF1C22911A3B40002CF5E /* TransformationTableViewController.xib */,
+				5B41195D29159C7E00BA6C1A /* DetailTransformationViewController.xib */,
 				5B8AF1B8291189F40002CF5E /* HeroesTableCellViews */,
 			);
 			path = Views;
@@ -179,6 +186,7 @@
 				5B8AF1B4291188790002CF5E /* HeroesTableViewController.swift */,
 				5B8AF1BD29119AFC0002CF5E /* DetailViewController.swift */,
 				5B8AF1C12911A3B40002CF5E /* TransformationTableViewController.swift */,
+				5B41195C29159C7E00BA6C1A /* DetailTransformationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 			children = (
 				5B7646792912EDC500B5838A /* HeroModel.swift */,
 				5B566C2B291450A200797311 /* NetworkModel.swift */,
+				5B41196029159D6700BA6C1A /* TransformationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B41195F29159C7E00BA6C1A /* DetailTransformationViewController.xib in Resources */,
 				5BEE2A3229116836009D1866 /* LaunchScreen.storyboard in Resources */,
 				5B8AF1C029119AFC0002CF5E /* DetailViewController.xib in Resources */,
 				5B8AF1BC29118A280002CF5E /* TableViewCell.xib in Resources */,
@@ -332,8 +342,10 @@
 				5B3D6EE1291169F100F3939B /* LoginViewController.swift in Sources */,
 				5BEE2A2629116834009D1866 /* AppDelegate.swift in Sources */,
 				5B8AF1BF29119AFC0002CF5E /* DetailViewController.swift in Sources */,
+				5B41195E29159C7E00BA6C1A /* DetailTransformationViewController.swift in Sources */,
 				5B566C2A2913F53A00797311 /* UIImageViewExtension.swift in Sources */,
 				5BEE2A2829116834009D1866 /* SceneDelegate.swift in Sources */,
+				5B41196129159D6700BA6C1A /* TransformationModel.swift in Sources */,
 				5B8AF1B6291188790002CF5E /* HeroesTableViewController.swift in Sources */,
 				5B566C2C291450A200797311 /* NetworkModel.swift in Sources */,
 				5B8AF1C32911A3B40002CF5E /* TransformationTableViewController.swift in Sources */,
