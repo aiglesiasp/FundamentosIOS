@@ -19,7 +19,6 @@ class HeroesTableViewController: UITableViewController {
         
         //MARK: - REGISTRAR NUESTRA CELDA -
         tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "heroesCellView")
-        
         //MARK: - LLAMADA A RED -
         let networkModel = NetworkModel.shared
         networkModel.getHeroes { [weak self] heroes, _ in

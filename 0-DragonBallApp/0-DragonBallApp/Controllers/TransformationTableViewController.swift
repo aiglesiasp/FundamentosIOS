@@ -30,7 +30,10 @@ class TransformationTableViewController: UITableViewController {
         guard let heroId else {return}
         networkModel.getTransformation(id: heroId) { [weak self] transformaciones, _ in
             guard let self = self else {return}
-            self.transformaciones = transformaciones
+            let trans = transformaciones
+            self.transformaciones = trans.sorted {
+                $0.name.localizedStandardCompare($1.name) == .orderedAscending
+            }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

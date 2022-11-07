@@ -24,8 +24,8 @@ class NetworkModel {
     var token: String?
     //Creo instancia de objeto singelton
     static let shared = NetworkModel()
-    private init () {
-    }
+    //private init () {
+    //}
     
     // MARK: - CREO LA FUNCION PARA HACER EL LOGIN Y COMPROBARLO
     //Le paso el escaping porque a lo mejor el completion tarda mas ue la vida de la funcion
