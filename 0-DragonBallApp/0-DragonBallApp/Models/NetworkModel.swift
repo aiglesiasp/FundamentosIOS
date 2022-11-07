@@ -9,7 +9,7 @@ import Foundation
 
 
 //CREMOA NUESTROS ERROR
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case malformedURL
     case dataFormatting
     case other
@@ -20,10 +20,19 @@ enum NetworkError: Error {
 }
 
 class NetworkModel {
+    //Creo variable session
+    let session : URLSession
     //Creo variable para guardarme el token
     var token: String?
+    
+    //MARK: Inicializando el token
+    init(urlSession: URLSession = .shared, token: String? = nil) {
+            self.session = urlSession
+            self.token = token
+        }
+
     //Creo instancia de objeto singelton
-    static let shared = NetworkModel()
+    //static let shared = NetworkModel()
     //private init () {
     //}
     
@@ -48,7 +57,7 @@ class NetworkModel {
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         //MARK: Creamos el DATATASK que usa este REQUEST
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             //Compruebo que el error es nil para seguir, sino salta el error
             guard error == nil
             else {
@@ -74,8 +83,6 @@ class NetworkModel {
                 completion(nil, NetworkError.tokenFormatError)
                 return
             }
-            //Guardo el token
-            self.token = token
             //Paso el token
             completion(token, nil)
         }
@@ -112,7 +119,7 @@ class NetworkModel {
         
         //Vuelvo a crear la tarea para verificar todo
         //MARK: Creamos el DATATASK que usa este REQUEST
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             //Compruebo que el error es nil para seguir, sino salta el error
             guard error == nil
             else {
@@ -173,7 +180,7 @@ class NetworkModel {
         
         //Vuelvo a crear la tarea para verificar todo
         //MARK: Creamos el DATATASK que usa este REQUEST
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let task = session.dataTask(with: urlRequest) { data, response, error in
             //Compruebo que el error es nil para seguir, sino salta el error
             guard error == nil
             else {

@@ -24,9 +24,10 @@ class TransformationTableViewController: UITableViewController {
         
         //MARK: - REGISTRAR NUESTRA CELDA -
         tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "heroesCellView")
-        
-        //MARK: -Hacemos llamada a red
-        let networkModel = NetworkModel.shared
+        //MARK: CONSEGUIMOS EL TOKEN
+        guard let token = LocalDataModel.getToken() else {return}
+        //MARK: - LLAMADA A RED -
+        let networkModel = NetworkModel(token: token)
         guard let heroId else {return}
         networkModel.getTransformation(id: heroId) { [weak self] transformaciones, _ in
             guard let self = self else {return}

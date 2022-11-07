@@ -19,8 +19,12 @@ class HeroesTableViewController: UITableViewController {
         
         //MARK: - REGISTRAR NUESTRA CELDA -
         tableView?.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "heroesCellView")
+        
+        //MARK: CONSEGUIMOS EL TOKEN
+        guard let token = LocalDataModel.getToken() else {return}
         //MARK: - LLAMADA A RED -
-        let networkModel = NetworkModel.shared
+        let networkModel = NetworkModel(token: token)
+                                        
         networkModel.getHeroes { [weak self] heroes, _ in
             guard let self = self else { return }
             self.heroes = heroes

@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     //MARK: - Boton para pasar entre pantallas -
     @IBAction func onLoginButtonTap(_ sender: Any) {
         //Creo las variables necesarias. Llamada a mi NetworkModel y a los componenetes de la pantalla
-        let model = NetworkModel.shared
+        let model = NetworkModel()
         let user = username.text ?? ""
         let password = password.text ?? ""
         let nextVC = HeroesTableViewController()
@@ -57,6 +57,9 @@ class LoginViewController: UIViewController {
                     return
                     
                 }
+                
+                //Guardamos el token
+                LocalDataModel.save(token: token)
 
                 //Llamo a la siguiente vista
                 self?.navigationController?.setViewControllers([nextVC], animated: true)
