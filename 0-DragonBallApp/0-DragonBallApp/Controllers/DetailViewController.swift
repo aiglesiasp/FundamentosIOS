@@ -25,8 +25,9 @@ class DetailViewController: UIViewController {
         self.title = "HEROE"
         
         guard let hero = hero else { return }
-        
-        self.heroeImage.setImage(url: hero.photo)
+        let url = URL(string: hero.photo)
+        guard let url = url else {return}
+        self.heroeImage.setImage(url: url)
         self.heroeName.text = hero.name
         self.heroeDescription.text = hero.description
 

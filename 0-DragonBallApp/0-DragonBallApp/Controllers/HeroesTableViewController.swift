@@ -28,6 +28,7 @@ class HeroesTableViewController: UITableViewController {
         networkModel.getHeroes { [weak self] heroes, _ in
             guard let self = self else { return }
             self.heroes = heroes
+            print(heroes)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()

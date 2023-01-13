@@ -40,7 +40,7 @@ class NetworkModel {
     //Le paso el escaping porque a lo mejor el completion tarda mas ue la vida de la funcion
     func login(user: String, password: String, completion: @escaping (String?, NetworkError?) -> Void) {
         //CREO LA URL HACIA LA API DE LOGIN y SI FALLA QUE ME DEVUELVA UN ERROR
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/auth/login") else {
+        guard let url = URL (string: "https://dragonball.keepcoding.education/api/auth/login") else {
             completion(nil, NetworkError.malformedURL)
             return
         }
@@ -93,7 +93,7 @@ class NetworkModel {
     //MARK: - CREO FUNCION PARA LISTA DE HEROES -
     func getHeroes (name: String = "", completion: @escaping ([Hero], NetworkError?) -> Void) {
         //LLAMADA A RED
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/all") else {
+        guard let url = URL (string: "https://dragonball.keepcoding.education/api/heros/all") else {
             completion([], NetworkError.malformedURL)
             return
         }
@@ -126,12 +126,14 @@ class NetworkModel {
                 completion([], NetworkError.other)
                 return
             }
+            print(error)
             //Miramos que la data tenga contenido
             guard let data = data
             else {
                 completion([], NetworkError.noData)
                 return
             }
+            print(data)
             //Miramos e tipo de respuesta recibido
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
@@ -139,12 +141,13 @@ class NetworkModel {
                 completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
                 return
             }
+            print(httpResponse)
             
             guard let heroesResponse = try? JSONDecoder().decode([Hero].self, from: data) else {
                 completion([], NetworkError.decoding)
                 return
             }
-            
+            print(heroesResponse)
             //Paso el token
             completion(heroesResponse, nil)
         }
@@ -154,7 +157,7 @@ class NetworkModel {
     //MARK: - CREO FUNCION PARA LISTA DE HEROES -
     func getTransformation (id: String, completion: @escaping ([Transformation], NetworkError?) -> Void) {
         //LLAMADA A RED
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/tranformations") else {
+        guard let url = URL (string: "https://dragonball.keepcoding.education/api/heros/tranformations") else {
             completion([], NetworkError.malformedURL)
             return
         }
@@ -193,6 +196,7 @@ class NetworkModel {
                 completion([], NetworkError.noData)
                 return
             }
+            print(data)
             //Miramos e tipo de respuesta recibido
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
@@ -205,7 +209,7 @@ class NetworkModel {
                 completion([], NetworkError.decoding)
                 return
             }
-            
+            print(transformationResponse)
             //Paso el token
             completion(transformationResponse, nil)
         }

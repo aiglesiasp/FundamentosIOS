@@ -19,12 +19,16 @@ class TableViewCell: UITableViewCell {
     func setHero(model:Hero) {
         self.heroesTitle.text = model.name
         self.heroesDescription.text = model.description
-        self.heroesImage.setImage(url: model.photo)
+        let url = URL(string: model.photo)
+        guard let url = url else {return}
+        self.heroesImage.setImage(url: url)
     }
     
     func setTransformation(model: Transformation) {
         self.heroesTitle.text = model.name
         self.heroesDescription.text = model.description
-        self.heroesImage.setImage(url: model.photo)
+        let url = URL(string: model.photo)
+        guard let url = url else {return}
+        self.heroesImage.setImage(url: url)
     }
 }

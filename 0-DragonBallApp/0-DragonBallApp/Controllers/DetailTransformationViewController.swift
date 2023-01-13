@@ -23,7 +23,9 @@ class DetailTransformationViewController: UIViewController {
 
         guard let transformation = transformation else {return}
         
-        self.imageTransformation.setImage(url: transformation.photo)
+        let url = URL(string: transformation.photo)
+        guard let url = url else {return}
+        self.imageTransformation.setImage(url: url)
         self.titleTransformation.text = transformation.name
         self.descriptionTransformation.text = transformation.description
         
